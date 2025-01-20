@@ -1,0 +1,41 @@
+name: bolillero_app
+description: Bolillero SIN REPETICIÓN
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tts: ^4.2.1
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.2.10
+  flutter_launcher_icons: ^0.14.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/esfera.png
+
+flutter_native_splash:
+  image: assets/images/esfera.png
+  color: "#000000" # fondo negro
+  android_gravity: center
+  ios_content_mode: center
+  android: true
+  ios: true
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/esfera.png"
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/esfera.png"

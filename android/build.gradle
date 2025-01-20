@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.7.0" // Plugin de Gradle para Android
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24" // Plugin de Kotlin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Configuración personalizada de directorios de compilación
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// Evaluación de dependencias del módulo app
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Tarea para limpiar la compilación
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
